@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+    padding: 4vh;
+    margin: 0;
+    background-image: url(BACKGROUND.jpg);
+    background-size: cover;
+    height: 30vh;
+    width: 50vw;
+}
+
+h1{
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    color: rgb(17, 66, 50);
+}
+
+label{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 10vh;
+    color: rgb(17, 66, 50);
+}
+
+input{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+#gender{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    text-align: justify;
+}
+
+form{
+    outline: none;
+    margin-top: 0vh;
+    background-color: rgb(247, 246, 187);
+    border-radius: 1vh;
+}
+
+fieldset{
+    border: 0;
+}
+
+textarea {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    text-align: justify;
+}
+
+#outputField {
+    width: 35vw;
+    height: 50vh;
+    outline: none;
+    margin-top: 0vh;
+    background-color: rgb(247, 246, 187);
+    border-radius: 1vh;
+}
+
+h2{
+    margin-top: 7vh;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    color: rgb(17, 66, 50);
+}
+
+#Details
+{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    text-align: justify;
+    margin-top: -1.5vh;
+}
+

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <title> 4QFA1: INTERACTIVE SIGN-UP SHEET</title>
+</head>
+<body>
+    <form id="login">
+        <fieldset form="login">
+            <h1> Sign Up to Our Learning Website!</h1>
+
+            <label for="userName">Name:</label>
+            <input type="text" id="Name" name="Name" onblur="onBlur1()" onfocus="onFocus1()"> <br> <br>
+
+            <label for="gender">Gender:</label>
+            <select name="gender" id="gender"> 
+                <option value="Male"> Male</option> 
+                <option value="Female"> Female </option> 
+                <option value="Prefer Not to Mention"> Prefer Not to Mention </option> 
+            </select> </br> </br> 
+
+            <label for="userName">Preferred Username:</label>
+            <input type="text" id="UserName" name="UserName" onblur="onBlur2()" onfocus="onFocus2()"> <br> <br>
+
+            <label for="pword">Password:</label>
+            <input type="password" id="pword" name="pword" onblur="onBlur3()" onfocus="onFocus3()"> <br> <br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" onblur="onBlur4()" onfocus="onFocus4()"> <br> <br> 
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="2" cols="50" onblur="onBlur5()" onfocus="onFocus5()"></textarea> <br> <br> 
+
+            <label for="paragraph">Write a Short Paragraph on your Interests:</label>
+            <textarea id="paragraph" name="paragraph" rows="10" cols="70" onblur="onBlur6()" onfocus="onFocus6()"></textarea> <br> <br> 
+
+            <input type="submit" onclick="load()"></input>
+            <input type="reset" onclick="reload()"></input>
+        </fieldset>
+    </form>
+    
+    <fieldset id="outputField" hidden>
+        <legend> <h2> Form Submitted! </h2> </legend>
+        <div id="Details"></div>
+    </fieldset>
+    
+    <script>
+        // SUBMISSION OUTPUT ----------------------------->
+        Name = document.getElementById('Name');
+        Gender = document.getElementById('gender');
+        Username = document.getElementById('UserName');
+        Password = document.getElementById('pword');
+        Email = document.getElementById('email');
+        Interests = document.getElementById('paragraph');
+        outputDiv = document.getElementById('Details');
+
+        function load()
+        {
+            document.getElementById('outputField').hidden = false;     
+            event.preventDefault();
+            document.getElementById('Details').innerHTML 
+            = "NAME: " + Name.value + "<br>" + "<br>" + "GENDER: " + Gender.value + "<br>" + "<br>" + "USERNAME: " + UserName.value + 
+            "<br>" + "<br>" + "EMAIL: " + Email.value + "<br>" + "<br>" + "INTERESTS: " + Interests.value;
+        }
+        
+        function reload()
+        {
+            document.getElementById('outputField').hidden =true;
+            document.getElementById('Details').innerHTML='';
+
+            var inputs = document.querySelectorAll('#login input[type="text"], #login input[type="password"], #login input[type="email"], #login textarea');
+            for (var i = 0; i < inputs.length; i++) {
+                inputs[i].style.borderColor = '';
+        }
+        }
+        
+        // ON BLUR ------------------------------------------->
+        function onBlur1() {
+            var a = document.getElementById("Name").value; 
+            if (a === '') 
+            {
+                document.getElementById("Name").style.borderColor = "red";
+            }        
+        }
+
+        function onBlur2() {
+            var b = document.getElementById("UserName").value; 
+            if (b === '') 
+            {
+                document.getElementById("UserName").style.borderColor = "red";
+            }
+        }
+
+        function onBlur3() {
+            var c = document.getElementById("pword").value; 
+            if (c === '') 
+            {
+                document.getElementById("pword").style.borderColor = "red";
+            }
+        }
+
+        function onBlur4() {
+            var d = document.getElementById("email").value; 
+            if (d === '') 
+            {
+                document.getElementById("email").style.borderColor = "red";
+            }
+        }
+
+        function onBlur5() {
+            var e = document.getElementById("address").value; 
+            if (e === '') 
+            {
+                document.getElementById("address").style.borderColor = "red";
+            }
+        }
+
+        function onBlur6() {
+            var f = document.getElementById("paragraph").value; 
+            if (f === '') 
+            {
+                document.getElementById("paragraph").style.borderColor = "red";
+            }
+        }
+
+        // ON FOCUS -------------------------------------------------------------->
+        function onFocus1() {
+            document.getElementById("Name").style.borderColor = "green";
+        }
+
+        function onFocus2() {
+            document.getElementById("UserName").style.borderColor = "green";
+        }
+
+        function onFocus3() {
+            document.getElementById("pword").style.borderColor = "green";
+        }
+
+        function onFocus4() {
+            document.getElementById("email").style.borderColor = "green";
+        }
+
+        function onFocus5() {
+            document.getElementById("address").style.borderColor = "green";
+        }
+
+        function onFocus6() {
+            document.getElementById("paragraph").style.borderColor = "green";
+        }
+    </script>
+</body>
+</html>
